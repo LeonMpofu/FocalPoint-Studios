@@ -165,7 +165,7 @@ nav ul li:hover .dropdown {
 
 .hero {
     height: 100vh; /* Full viewport height */
-    background-image: url('/Users/leonmpofu/Desktop/Camera Shop/pictures/3bbeb93e9c6a09b5cfc7e0b97245a2bb.jpg');
+    background-image: url('./pictures/3bbeb93e9c6a09b5cfc7e0b97245a2bb.jpg');
     background-size: cover; 
     background-position: center; 
     display: flex; 
