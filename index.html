@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocalPoint Studios</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header and Mega Menu -->
+    <header>
+        <div class="logo">
+            <h1 style="font-style: italic; color: #ff5722;">FocalPoint Studios</h1>
+            <img src="/Users/leonmpofu/Desktop/Camera Shop/logo/Screenshot 2024-09-14 at 00.40.36.png" alt="Camera Shop Logo">
+        </div>
+        <nav>
+            <ul class="mega-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a>
+                    <ul class="dropdown">
+                        <li><a href="#dslr">DSLR Cameras</a></li>
+                        <li><a href="#mirrorless">Mirrorless Cameras</a></li>
+                        <li><a href="#accessories">Accessories</a></li>
+                    </ul>
+                </li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+   <!-- Video Section -->
+<section id="video-section" class="video-section">
+    <video autoplay loop muted>
+        <source src="/Users/leonmpofu/Desktop/Camera Shop/Videos/Blue and Black Simple Coming Soon Instagram Reel (Facebook Video).mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</section>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sale Countdown</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section id="countdown" class="countdown">
+        <h2>Countdown to the Sale</h2>
+        <div id="timer">
+            <div>
+                <span id="days">2</span>
+                <p>Days</p>
+            </div>
+            <div>
+                <span id="hours">06</span>
+                <p>Hours</p>
+            </div>
+            <div>
+                <span id="minutes">42</span>
+                <p>Minutes</p>
+            </div>
+            <div>
+                <span id="seconds">27</span>
+                <p>Seconds</p>
+            </div>
+        </div>
+        <p id="sale-message"></p>
+    </section>
+
+    <script src="script.js"></script>
+   
+</body>
+<body>
+    <button id="toggleSidebar">☰ Menu</button> <!-- Add this button to toggle the sidebar -->
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-content">
+            <h2>Categories</h2>
+            <ul>
+                <li><a href="#">Cameras</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Digital Cameras: DSLRs, mirrorless cameras, point-and-shoot cameras</a></li>
+                        <li><a href="#">Action Cameras: GoPro, DJI Osmo, underwater cameras</a></li>
+                        <li><a href="#">Instant Cameras: Polaroid, Fujifilm Instax</a></li>
+                        <li><a href="#">Camcorders: Professional video cameras, vlogging cameras</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Lenses</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Standard Lenses: 35mm, 50mm, 85mm</a></li>
+                        <li><a href="#">Telephoto Lenses: 70-200mm, 100-400mm</a></li>
+                        <li><a href="#">Wide-Angle Lenses: 14mm, 24mm, fisheye lenses</a></li>
+                        <li><a href="#">Macro Lenses: For close-up photography</a></li>
+                        <li><a href="#">Zoom Lenses: All-purpose zoom lenses</a></li>
+                        <li><a href="#">Prime Lenses: Fixed focal length lenses</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Bags and Cases</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Camera Backpacks, Shoulder Bags, Waterproof and Hard Cases</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+<script>
+    document.getElementById('toggleSidebar').addEventListener('click', function() {
+        var sidebar = document.getElementById('sidebar');
+        if (sidebar.style.display === 'none' || sidebar.style.display === '') {
+            sidebar.style.display = 'block'; // Show sidebar
+        } else {
+            sidebar.style.display = 'none';  // Hide sidebar
+        }
+    });
+</script>
+
+</body>
+
+
+</html>
+
+
+    <!-- Hero Banner -->
+<section id="home" class="hero">
+    <h2>Capture Your Moments with the Best Cameras</h2>
+    <p>Your one-stop-shop for all camera needs</p>
+    <button class="cta">Shop Now</button>
+</section>
+
+
+    <!-- Product Categories -->
+    <section id="categories" class="categories">
+        <h2>Explore Our Categories</h2>
+        <div class="category-container">
+            <div class="category">
+                <img src="/Users/leonmpofu/Desktop/Camera Shop/pictures/DSLR-O.jpg" alt="DSLR Cameras">
+                <h3>DSLR Cameras</h3>
+            </div>
+            <div class="category">
+                <img src="/Users/leonmpofu/Desktop/Camera Shop/pictures/mirrorless.webp" alt="Mirrorless Cameras">
+                <h3>Mirrorless Cameras</h3>
+            </div>
+            <div class="category">
+                <img src="/Users/leonmpofu/Desktop/Camera Shop/pictures/camera accessories.jpeg" alt="Camera Accessories">
+                <h3>Accessories</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="featured-products" class="featured-products">
+        <h2>Featured Products</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="/Users/leonmpofu/Desktop/Camera Shop/pictures/AJ-CX4000_4K_HDR_ENG_Shoulder-Mount_Camera_4_1080x.webp" alt="Camera 1">
+                <h3>Panasonic AJ-CX4000 4K HDR ENG Shoulder-Mount Camera</h3>
+                <p>R900,499.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="/Users/leonmpofu/Desktop/Camera Shop/pictures/GO PRO.webp" alt="Camera 2">
+                <h3>GoPro Hero10 Action Camera</h3>
+                <p>R10,499.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="/Users/leonmpofu/Desktop/Camera Shop/pictures/DJi-Ronin-4d-6k-1-optimized.webp" alt="Camera 3">
+                <h3>DJI RONIN</h3>
+                <p>R158,999.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="/Users/leonmpofu/Desktop/Camera Shop/pictures/insta360-one-x3-room-360-degrees-official-guarantee-italy-2-years.jpg" alt="Camera 4">
+                <h3>Insta360</h3>
+                <p>R14,699.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Section -->
+    <section id="seo" class="seo">
+        <h2>Why Choose Us?</h2>
+        <p> At FocalPoint Studios, we believe every photographer deserves that one perfect lens to tell their story. Be it a seasoned pro chasing the next breathtaking shot or a budding enthusiast doing their exploration of the world through the viewfinder, we have you covered. A curated selection of DSLRs hosting cutting features, sleek mirrorless cameras, and must-have accessories designed to upgrade your photography game. Be it top-tier quality, expert guidance, or prices that don't dent your wallet, FocalPoint Studios is your perfect partner to rewrite those moments into magic. Let us capture the extraordinary!</p>
+     <div class="why-choose-us">
+    
+    <!-- Photo Slider Section -->
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide">
+                <img src="/Users/leonmpofu/Desktop/Camera Shop/slides/FOCALPOINT. STUDIOS.png" alt="Photo 1">
+            </div>
+            <div class="slide">
+                <img src="/Users/leonmpofu/Desktop/Camera Shop/slides/Black and Brown Modern Professional Photography Instagram Post (1024 x 606 px).png" alt="Photo 2">
+            </div>
+            <div class="slide">
+                <img src="/Users/leonmpofu/Desktop/Camera Shop/slides/FoculPoint (1).png" alt="Photo 3">
+            </div>
+            <div class="slide">
+                <img src="/Users/leonmpofu/Desktop/Camera Shop/slides/BUY (1024 x 606 px).png" alt="Photo 4">
+
+            
+            </div>
+        </div>
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+     <script>
+    
+    let currentSlide = 0;
+
+    function moveSlide(direction) {
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        currentSlide += direction;
+
+        if (currentSlide >= totalSlides) {
+            currentSlide = 0; // Loop back to the first slide
+        } else if (currentSlide < 0) {
+            currentSlide = totalSlides - 1; // Loop to the last slide
+        }
+
+        document.querySelector('.slider').style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    // Optional: Auto-slide every 5 seconds
+    setInterval(() => {
+        moveSlide(1);
+    }, 5000);
+</script>   
+    </div>
+</div>
+   
+    </section>
+
+    <!-- Promo Banner -->
+    <section id="promo" class="promo-banner">
+        <h2>Summer Sale - Up to 30% Off!</h2>
+        <p>Don't miss out on our limited-time offers on select cameras and accessories.</p>
+        <button class="cta">Shop Sale</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="social-media">
+            <a href="#"><img src="/Users/leonmpofu/Desktop/Camera Shop/footer/Facebook-Logosu.png" alt="Facebook"></a>
+            <a href="#"><img src="/Users/leonmpofu/Desktop/Camera Shop/footer/new-twitter-logo-x-2023-twitter-x-logo-vector-download_691560-10806.avif" alt="Twitter"></a>
+            <a href="#"><img src="/Users/leonmpofu/Desktop/Camera Shop/footer/_89649395_instagram_logo_976.jpg" alt="Instagram"></a>
+        </div>
+        <div class="newsletter">
+            <h3>Subscribe to Our Newsletter</h3>
+            <form>
+                <input type="email" placeholder="Your Email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+        <p>&copy; FocalPoint Studios | All Rights Reserved. |Designed By Leon Mpofu</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
