@@ -381,4 +381,416 @@
     .sidebar a { color: var(--white); text-decoration: none; font-size: .9rem; transition: color .2s; }
     .sidebar a:hover { color: var(--gold); }
     .sidebar .sub { padding: .5rem 0 .5rem 1rem; display: none; flex-direction: column; gap: .4rem; }
-    .sidebar .s
+    .sidebar .sub.open { display: flex; }
+    .sidebar .sub a { color: var(--muted); font-size: .82rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #080808;
+      border-top: 1px solid #1e1e1e;
+      padding: 4rem 1.5rem 2rem;
+    }
+    .footer-grid {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+    .footer-brand .logo-text { font-size: 1.5rem; }
+    .footer-brand p { margin-top: .75rem; color: var(--muted); font-size: .85rem; line-height: 1.7; }
+    footer h4 { font-size: .85rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .footer-links ul { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
+    .footer-links a { color: var(--muted); text-decoration: none; font-size: .9rem; transition: color .2s; }
+    .footer-links a:hover { color: var(--white); }
+    .newsletter-form { display: flex; gap: .5rem; flex-wrap: wrap; }
+    .newsletter-form input {
+      flex: 1;
+      min-width: 0;
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: var(--radius);
+      padding: .7rem 1rem;
+      color: var(--white);
+      font-size: .9rem;
+    }
+    .newsletter-form input::placeholder { color: var(--muted); }
+    .newsletter-form button { white-space: nowrap; }
+    .social-icons { display: flex; gap: .75rem; margin-top: .5rem; }
+    .social-icons a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border: 1px solid #333;
+      border-radius: 50%;
+      color: var(--muted);
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: border-color .2s, color .2s;
+    }
+    .social-icons a:hover { border-color: var(--gold); color: var(--gold); }
+    .footer-bottom {
+      max-width: var(--max);
+      margin: 0 auto;
+      border-top: 1px solid #1e1e1e;
+      padding-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: .5rem;
+      font-size: .8rem;
+      color: var(--muted);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { display: none; }
+      .hamburger { display: flex; }
+      .about-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      section { padding: 3.5rem 1.25rem; }
+      .timer-block { min-width: 68px; padding: 1rem; }
+      .timer-block span { font-size: 2rem; }
+    }
+    @media (max-width: 480px) {
+      .cat-grid, .product-grid { grid-template-columns: 1fr; }
+      .newsletter-form { flex-direction: column; }
+      .newsletter-form button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- SIDEBAR TOGGLE -->
+<button class="sidebar-toggle" onclick="toggleSidebar()">☰ Browse</button>
+
+<!-- SIDEBAR -->
+<aside id="sidebar" class="sidebar">
+  <h2>Browse Categories</h2>
+  <ul>
+    <li>
+      <a href="#" onclick="toggleSub(this)">📷 Cameras ▸</a>
+      <div class="sub">
+        <a href="#">Digital (DSLR, Mirrorless, Point-and-shoot)</a>
+        <a href="#">Action Cameras (GoPro, DJI Osmo)</a>
+        <a href="#">Instant Cameras (Polaroid, Fujifilm Instax)</a>
+        <a href="#">Camcorders & Vlogging Cameras</a>
+      </div>
+    </li>
+    <li>
+      <a href="#" onclick="toggleSub(this)">🔭 Lenses ▸</a>
+      <div class="sub">
+        <a href="#">Standard — 35mm / 50mm / 85mm</a>
+        <a href="#">Telephoto — 70-200mm / 100-400mm</a>
+        <a href="#">Wide-Angle — 14mm / 24mm / Fisheye</a>
+        <a href="#">Macro Lenses</a>
+        <a href="#">Prime &amp; Zoom Lenses</a>
+      </div>
+    </li>
+    <li>
+      <a href="#" onclick="toggleSub(this)">🎒 Bags &amp; Cases ▸</a>
+      <div class="sub">
+        <a href="#">Camera Backpacks</a>
+        <a href="#">Shoulder Bags</a>
+        <a href="#">Waterproof &amp; Hard Cases</a>
+      </div>
+    </li>
+  </ul>
+</aside>
+
+<!-- HEADER -->
+<header>
+  <div class="logo-text">FocalPoint Studios</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#categories">Products</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#home" onclick="closeMobileNav()">Home</a>
+  <a href="#categories" onclick="closeMobileNav()">Products</a>
+  <a href="#about" onclick="closeMobileNav()">About</a>
+  <a href="#contact" onclick="closeMobileNav()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <h1>Capture Your Moments<br>with the <span>Best Cameras</span></h1>
+  <p>Your one-stop-shop for DSLRs, mirrorless cameras, and professional accessories.</p>
+  <a href="#categories" class="btn">Shop Now</a>
+</section>
+
+<!-- COUNTDOWN -->
+<section class="countdown" id="countdown">
+  <div class="container">
+    <h2>⏱ Countdown to the Sale</h2>
+    <div class="timer">
+      <div class="timer-block"><span id="days">00</span><p>Days</p></div>
+      <div class="timer-block"><span id="hours">00</span><p>Hours</p></div>
+      <div class="timer-block"><span id="minutes">00</span><p>Minutes</p></div>
+      <div class="timer-block"><span id="seconds">00</span><p>Seconds</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section id="categories" class="categories">
+  <div class="container">
+    <h2 class="section-title">Explore Our <span>Categories</span></h2>
+    <div class="cat-grid">
+      <div class="cat-card">
+        <img src="https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?w=600&auto=format&fit=crop" alt="DSLR Cameras">
+        <div class="cat-label"><h3>DSLR Cameras</h3><small>View Collection →</small></div>
+      </div>
+      <div class="cat-card">
+        <img src="https://images.unsplash.com/photo-1516724562728-afc824a36e84?w=600&auto=format&fit=crop" alt="Mirrorless Cameras">
+        <div class="cat-label"><h3>Mirrorless Cameras</h3><small>View Collection →</small></div>
+      </div>
+      <div class="cat-card">
+        <img src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=600&auto=format&fit=crop" alt="Accessories">
+        <div class="cat-label"><h3>Accessories</h3><small>View Collection →</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PRODUCTS -->
+<section id="products" class="products">
+  <div class="container">
+    <h2 class="section-title">Featured <span>Products</span></h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1549122728-f519709caa9c?w=600&auto=format&fit=crop" alt="Panasonic AJ-CX4000">
+        <div class="product-info">
+          <h3>Panasonic AJ-CX4000 4K HDR ENG Shoulder-Mount Camera</h3>
+          <div class="price">R900,499.99</div>
+          <button class="btn">Add to Cart</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1530977875151-6cba0e3d8ec3?w=600&auto=format&fit=crop" alt="GoPro Hero10">
+        <div class="product-info">
+          <h3>GoPro Hero10 Action Camera</h3>
+          <div class="price">R10,499.99</div>
+          <button class="btn">Add to Cart</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1616091238212-591d66b01a8a?w=600&auto=format&fit=crop" alt="DJI Ronin">
+        <div class="product-info">
+          <h3>DJI Ronin 4D Cinema Camera</h3>
+          <div class="price">R158,999.99</div>
+          <button class="btn">Add to Cart</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1569429593410-b498b3fb3387?w=600&auto=format&fit=crop" alt="Insta360">
+        <div class="product-info">
+          <h3>Insta360 ONE X3 360° Camera</h3>
+          <div class="price">R14,699.99</div>
+          <button class="btn">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / WHY US -->
+<section id="about" class="about">
+  <div class="container">
+    <div class="about-inner">
+      <div class="about-text">
+        <h2 class="section-title" style="text-align:left; margin-bottom:1.5rem;">Why Choose <span>Us?</span></h2>
+        <p>At FocalPoint Studios, we believe every photographer deserves that one perfect lens to tell their story. Whether you're a seasoned pro chasing the next breathtaking shot or a budding enthusiast exploring the world through the viewfinder — we have you covered. A curated selection of DSLRs, sleek mirrorless cameras, and must-have accessories designed to upgrade your photography game.</p>
+      </div>
+      <div class="about-perks">
+        <div class="perk">
+          <div class="perk-icon">🏆</div>
+          <div>
+            <h4>Top-Tier Quality</h4>
+            <p>Every product is handpicked for performance and durability.</p>
+          </div>
+        </div>
+        <div class="perk">
+          <div class="perk-icon">🎓</div>
+          <div>
+            <h4>Expert Guidance</h4>
+            <p>Our team of photographers helps you make the right choice.</p>
+          </div>
+        </div>
+        <div class="perk">
+          <div class="perk-icon">💰</div>
+          <div>
+            <h4>Competitive Prices</h4>
+            <p>Best value for professional-grade gear in South Africa.</p>
+          </div>
+        </div>
+        <div class="perk">
+          <div class="perk-icon">🚚</div>
+          <div>
+            <h4>Fast Nationwide Delivery</h4>
+            <p>Swift, tracked delivery straight to your door.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDER -->
+<section class="slider-section">
+  <h2 class="section-title">Our <span>Story</span></h2>
+  <div class="slider-wrap">
+    <div class="slider-track" id="sliderTrack">
+      <div class="slide">
+        <img src="//LeonMpofu/FocalPoint-Studios/slides/Black and Brown Modern Professional Photography Instagram Post (1024 x 606 px).png" alt="Slide 1">
+      </div>
+      <div class="slide">
+        <img src="//LeonMpofu/FocalPoint-Studios/slides/BUY (1024 x 606 px).png" alt="Slide 2">
+      </div>
+      <div class="slide">
+        <img src="//LeonMpofu/FocalPoint-Studios/slides/FOCALPOINT. STUDIOS.png" alt="Slide 3">
+      </div>
+      <div class="slide">
+        <img src="//LeonMpofu/FocalPoint-Studios/slides/FoculPoint (1).png" alt="Slide 4">
+      </div>
+    </div>
+    <div class="slider-controls">
+      <button class="slider-btn" onclick="moveSlide(-1)">&#10094;</button>
+      <button class="slider-btn" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+  </div>
+</section>
+
+<!-- PROMO -->
+<section class="promo" id="contact">
+  <div class="container" style="text-align:center;">
+    <div class="promo-badge">Limited Time</div>
+    <h2>Summer Sale — Up to 30% Off!</h2>
+    <p>Don't miss out on our limited-time offers on select cameras and accessories. Deals end soon.</p>
+    <a href="#products" class="btn">Shop the Sale</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo-text">FocalPoint Studios</div>
+      <p>Your trusted partner for professional cameras, lenses, and accessories in South Africa.</p>
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Twitter">𝕏</a>
+        <a href="#" aria-label="Instagram">⊕</a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#categories">Products</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="#">DSLR Cameras</a></li>
+        <li><a href="#">Mirrorless Cameras</a></li>
+        <li><a href="#">Action Cameras</a></li>
+        <li><a href="#">Lenses</a></li>
+        <li><a href="#">Bags &amp; Cases</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Newsletter</h4>
+      <p style="color:var(--muted);font-size:.85rem;margin-bottom:1rem;">Get the latest deals and photography tips.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="Your email address">
+        <button class="btn" style="padding:.7rem 1.2rem;font-size:.82rem;">Subscribe</button>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 FocalPoint Studios. All Rights Reserved.</p>
+    <p>Designed by Leon Mpofu</p>
+  </div>
+</footer>
+
+<script>
+  /* ── COUNTDOWN ── */
+  const saleDate = new Date();
+  saleDate.setDate(saleDate.getDate() + 2);
+  saleDate.setHours(saleDate.getHours() + 6);
+  saleDate.setMinutes(saleDate.getMinutes() + 42);
+
+  function updateTimer() {
+    const now = new Date();
+    const diff = saleDate - now;
+    if (diff <= 0) { document.getElementById('countdown').innerHTML = '<h2>🎉 The Sale Is Live!</h2>'; return; }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('days').textContent    = String(d).padStart(2,'0');
+    document.getElementById('hours').textContent   = String(h).padStart(2,'0');
+    document.getElementById('minutes').textContent = String(m).padStart(2,'0');
+    document.getElementById('seconds').textContent = String(s).padStart(2,'0');
+  }
+  updateTimer();
+  setInterval(updateTimer, 1000);
+
+  /* ── SLIDER ── */
+  let currentSlide = 0;
+  const track = document.getElementById('sliderTrack');
+  const totalSlides = track.children.length;
+  function moveSlide(dir) {
+    currentSlide = (currentSlide + dir + totalSlides) % totalSlides;
+    track.style.transform = `translateX(-${currentSlide * 100}%)`;
+  }
+  setInterval(() => moveSlide(1), 5000);
+
+  /* ── MOBILE NAV ── */
+  function toggleMobileNav() {
+    document.getElementById('mobileNav').classList.toggle('open');
+  }
+  function closeMobileNav() {
+    document.getElementById('mobileNav').classList.remove('open');
+  }
+
+  /* ── SIDEBAR ── */
+  function toggleSidebar() {
+    document.getElementById('sidebar').classList.toggle('open');
+  }
+
+  /* ── SIDEBAR SUB-MENUS ── */
+  function toggleSub(el) {
+    el.preventDefault ? el.preventDefault() : (event.returnValue = false);
+    const sub = el.nextElementSibling;
+    sub && sub.classList.toggle('open');
+  }
+  document.querySelectorAll('.sidebar a[onclick]').forEach(a => {
+    a.addEventListener('click', e => e.preventDefault());
+  });
+
+  /* ── CLOSE SIDEBAR ON OUTSIDE CLICK ── */
+  document.addEventListener('click', function(e) {
+    const sidebar = document.getElementById('sidebar');
+    const toggle = document.querySelector('.sidebar-toggle');
+    if (!sidebar.contains(e.target) && !toggle.contains(e.target)) {
+      sidebar.classList.remove('open');
+    }
+  });
+</script>
+</body>
+</html>
